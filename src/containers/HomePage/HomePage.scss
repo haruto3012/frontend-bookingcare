@@ -1,0 +1,203 @@
+.slick-prev {
+    // position: relative !important;
+    left: -10px !important;
+    z-index: 1;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #d7d7d7 !important;
+
+    &:hover {
+        background: #e8e2e2 !important;
+        border: 2px solid #49bce2 !important;
+
+    }
+}
+
+.slick-prev:before,
+.slick-next::before {
+
+    font-family: FontAwesome !important;
+    color: #49bce2 !important;
+
+}
+
+.slick-next {
+    right: -10px !important;
+    border: 1px solid red !important;
+    z-index: 1;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #d7d7d7 !important;
+
+    &:hover {
+        background: #e8e2e2 !important;
+        border: 2px solid #49bce2 !important;
+    }
+
+}
+
+.section-share {
+
+    &.section-specialty {
+        background: #f5f5f5;
+    }
+
+    &.section-medical-facility {
+        background: #f5f5f5;
+    }
+
+    &.section-outstanding-doctor {
+        background: #f5f5f5;
+
+    }
+
+    &.section-about {
+        height: 450px;
+    }
+
+    .section-body {
+        .section-customize {
+            height: 150px;
+            font-size: 13px;
+
+
+            .bg-img {
+                height: 150px;
+                width: 280px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+
+                &.section-specialty {
+                    background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+                }
+
+                &.section-medical-facility {
+                    background-image: url('../../assets/medicalfacility/benhvien.jpg');
+                    background-size: 80%;
+                }
+
+                &.section-outstanding-doctor {
+                    background-image: url('../../assets/outstandingdoctor/satthudatinh.jpg');
+                    border-radius: 50%;
+                    width: 120px;
+                    height: 120px;
+                }
+
+                &.section-handbook {
+                    background-image: url('../../assets/handbook/navi.jpg');
+                    background-size: 85%;
+                }
+            }
+        }
+    }
+}
+
+
+.section-share {
+    height: 330px;
+
+
+    .section-container {
+        margin: 0 180px;
+        display: flex;
+        flex-direction: column;
+        width: 1170px;
+
+        .section-header {
+            height: 60px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+
+            .title-section {
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            .btn-section {
+                float: right;
+                padding: 10px 15px;
+                border: none;
+                outline: none;
+                display: block;
+                color: #49bce2;
+                background: #fff;
+                cursor: pointer;
+                border: 1px solid gainsboro;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: #fff;
+                    background: #f7d800;
+                }
+            }
+
+        }
+
+
+    }
+}
+
+.section-outstanding-doctor {
+    .outer-bg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+
+    }
+
+    .section-customize {
+        padding: 5px;
+
+        .border-customize {
+            border: 1px solid #f7d800;
+            padding: 10px 10px 0 10px;
+        }
+    }
+}
+
+.section-about {
+    padding: 0 170px;
+
+
+    .section-about-header {
+        padding: 10px 10px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .section-about-content {
+        display: flex;
+        gap: 15px;
+
+        .content-left {
+            width: 50%;
+        }
+
+        .content-right {
+            width: 50%;
+
+            p {
+                text-align: justify;
+                font-style: italic;
+                padding: 0 10px;
+            }
+        }
+
+    }
+}
+
+
+.home-footer {
+    text-align: center;
+    padding-top: 8px;
+
+    a {
+        text-decoration: unset;
+    }
+}
+
+//reset slick slider css

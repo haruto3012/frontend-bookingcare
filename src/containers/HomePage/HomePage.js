@@ -2,14 +2,37 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import HeaderHomePage from './HeaderHomePage';
+import Specialty from './Section/Specialty';
+import MedicalFacilities from './Section/MedicalFacilities';
+import './HomePage.scss';
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import OutstandingDoctor from './Section/OutstandingDoctor';
+import Handbook from './Section/Handbook';
+import About from './Section/About';
+import FooterHomePage from './FooterHomePage';
+
 
 class HomePage extends Component {
 
     render() {
+        let settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 1
+        };
 
         return (
-            <div>
+            <div style={{ fontFamily: 'Montserrat' }}>
                 <HeaderHomePage />
+                <Specialty settings={settings} />
+                <MedicalFacilities settings={settings} />
+                <OutstandingDoctor settings={settings} />
+                <Handbook settings={settings} />
+                <About />
+                <FooterHomePage />
             </div>
         );
     }
