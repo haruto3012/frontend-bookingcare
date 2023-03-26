@@ -12,7 +12,7 @@
         "welcome": "Welcome, "
     },
     "banner": {
-        "title1": "MEDICAL BACKGROUND",
+        "title1": "MEDICAL PLATFORM",
         "title2": "COMPREHENSIVE HEALTH CARE",
         "icon1": "Specialized Examination",
         "icon2": "Remote Examination",
@@ -37,6 +37,9 @@
             "manage-specialty": "Manage Specialties",
             "handbook": "Handbook",
             "manage-handbook": "Manage Handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage doctor's schedule"
         }
     },
     "manage-user": {
@@ -53,5 +56,23 @@
         "image": "Avatar",
         "save": "Save",
         "edit": "Save changes"
+    },
+    "homepage": {
+        "outstanding-doctor": "Last weak's featured doctors",
+        "more-infor": "More information"
+    },
+    "manage-schedule": {
+        "title": "Manage doctor's schedule",
+        "choose-doctor": "Choose Doctor",
+        "choose-date": "Choose Date",
+        "save-infor": "Save"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": " SCHEDULE",
+            "no-schedule": "The doctor does not have an appointment during this time. Please choose another time!",
+            "choose": "Choose ",
+            "book-free": " and book (Free)"
+        }
     }
 }

@@ -14,19 +14,23 @@ import FooterHomePage from './FooterHomePage';
 
 
 class HomePage extends Component {
+    // handleAfterChange = (event, slick, currentSlide) => {
 
+    // }
     render() {
         let settings = {
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 500,
             slidesToShow: 4,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            // slickGoTo: this.handleAfterChange
         };
 
         return (
             <div style={{ fontFamily: 'Montserrat' }}>
-                <HeaderHomePage />
+
+                <HeaderHomePage isShowBanner={true} />
                 <Specialty settings={settings} />
                 <MedicalFacilities settings={settings} />
                 <OutstandingDoctor settings={settings} />

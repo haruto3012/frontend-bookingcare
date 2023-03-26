@@ -304,7 +304,8 @@ class UserRedux extends Component {
                                         this.handleChangeImage(event)
                                     }} />
                                     <label className='label-upload' htmlFor='previewImg'>Tải ảnh <i className="fas fa-file-upload"></i></label>
-                                    <div className='preview-image' style={{ backgroundImage: `url(${this.state.previewImgURL})` }}
+                                    <div className='preview-image'
+                                        style={{ backgroundImage: `url(${this.state.previewImgURL})` }}
                                         onClick={() => this.openReviewImage()}
                                     >
 
@@ -312,7 +313,7 @@ class UserRedux extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className='col-3 my-3'>
+                            <div className='col-12 mb-3' style={{ display: 'flex', justifyContent: 'end' }}>
                                 <button className={this.state.action === CRUD_ACTIONS.EDIT ? 'btn btn-warning mt-3' : 'btn btn-primary mt-3'}
                                     style={{ padding: '0 10px' }}
                                     onClick={() => this.handleSaveUser()}

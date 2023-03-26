@@ -35,7 +35,10 @@
         background: #e8e2e2 !important;
         border: 2px solid #49bce2 !important;
     }
+}
 
+.slick-disabled {
+    display: none !important;
 }
 
 .section-share {
@@ -81,7 +84,7 @@
                 }
 
                 &.section-outstanding-doctor {
-                    background-image: url('../../assets/outstandingdoctor/satthudatinh.jpg');
+                    // background-image: url('../../assets/outstandingdoctor/satthudatinh.jpg');
                     border-radius: 50%;
                     width: 120px;
                     height: 120px;
@@ -151,9 +154,10 @@
 
     .section-customize {
         padding: 5px;
+        cursor: pointer;
 
         .border-customize {
-            border: 1px solid #f7d800;
+            // border: 1px solid #f7d800;
             padding: 10px 10px 0 10px;
         }
     }

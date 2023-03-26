@@ -5,6 +5,7 @@ import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
 import { LANGUAGES } from '../../utils/constant'
 import { changeLanguageApp } from '../../store/actions';
+import { withRouter } from 'react-router-dom';
 // import { adminMenu } from './menuApp';
 import './HeaderHomePage.scss';
 import bg1 from '../../assets/images/khamchuyenkhoa.png'
@@ -26,6 +27,13 @@ class HeaderHomePage extends Component {
         this.props.changeLanguageAppRedux(language)
     }
 
+    returnToHome = () => {
+        if (this.props.history) {
+
+            this.props.history.push(`/home`)
+        }
+    }
+
 
     render() {
         let language = this.props.language
@@ -36,7 +44,7 @@ class HeaderHomePage extends Component {
                     <div className="home-header-content">
                         <div className='left-content'>
                             <i className="fas fa-bars"></i>
-                            <img className='header-logo' src={logo} alt='logo' />
+                            <img className='header-logo' src={logo} alt='logo' onClick={() => this.returnToHome()} />
                         </div>
                         <div className='center-content'>
                             <div className='child-content'>
@@ -63,56 +71,58 @@ class HeaderHomePage extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='home-header-banner' style={{ backgroundImage: `url(${banner})` }}>
-                    <div className='content-up'>
-                        <div className='title1'><FormattedMessage id='banner.title1' /></div>
-                        <div className='title2'><FormattedMessage id='banner.title2' /></div>
-                        <div className='search'>
-                            <i className="fas fa-search"></i>
-                            <input type='text' placeholder='Tìm chuyên khoa khám bệnh' />
+                {this.props.isShowBanner === true &&
+                    <div className='home-header-banner' style={{ backgroundImage: `url(${banner})` }}>
+                        <div className='content-up'>
+                            <div className='title1'><FormattedMessage id='banner.title1' /></div>
+                            <div className='title2'><FormattedMessage id='banner.title2' /></div>
+                            <div className='search'>
+                                <i className="fas fa-search"></i>
+                                <input type='text' placeholder='Tìm chuyên khoa khám bệnh' />
+                            </div>
+                        </div>
+                        <div className='content-down'>
+                            <div className='options'>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg1})`, backgroundSize: '32px' }} ></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon1' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg2})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon2' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg3})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon3' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg4})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon4' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg5})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon5' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg6})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon6' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg7})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon7' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg8})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon8' /></div>
+                                </a>
+                                <a className='option-child' href='#'>
+                                    <div className='icon-child' style={{ backgroundImage: `url(${bg9})`, backgroundSize: '32px' }}></div>
+                                    <div className='text-child'><FormattedMessage id='banner.icon9' /></div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div className='content-down'>
-                        <div className='options'>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg1})`, backgroundSize: '32px' }} ></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon1' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg2})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon2' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg3})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon3' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg4})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon4' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg5})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon5' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg6})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon6' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg7})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon7' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg8})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon8' /></div>
-                            </a>
-                            <a className='option-child' href='#'>
-                                <div className='icon-child' style={{ backgroundImage: `url(${bg9})`, backgroundSize: '32px' }}></div>
-                                <div className='text-child'><FormattedMessage id='banner.icon9' /></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                }
             </>
         );
     }
@@ -133,4 +143,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderHomePage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HeaderHomePage));
