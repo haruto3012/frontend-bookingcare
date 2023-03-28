@@ -244,6 +244,9 @@ export const saveDetailDoctor = (inputData) => {
             if (res && res.errCode === 0) {
                 toast.success("Save the doctor succeed!")
                 dispatch(saveDetailDoctorSuccess())
+            } else {
+                toast.error("Save the doctor error!")
+                dispatch(saveDetailDoctorFailed())
             }
         } catch (e) {
             toast.error("Save the doctor error!")
@@ -282,4 +285,42 @@ export const fetchAllScheduleTimeSuccess = (data) => ({
 })
 export const fetchAllScheduleTimeFailed = () => ({
     type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED
+})
+
+export const getRequiredDoctorInfor = () => {
+    return async (dispatch, getState) => {
+        try {
+            dispatch(fetchRequiredDoctorInforStart())
+            let resPrice = await getAllCodeService("PRICE")
+            let resPayment = await getAllCodeService("PAYMENT")
+            let resProvince = await getAllCodeService("PROVINCE")
+            if (resPrice && resPayment && resProvince &&
+                resPrice.errCode === 0 && resPayment.errCode === 0 && resProvince.errCode === 0) {
+                let data = {
+                    resPrice: resPrice.data,
+                    resPayment: resPayment.data,
+                    resProvince: resProvince.data,
+                }
+                dispatch(fetchRequiredDoctorInforSuccess(data))
+            } else {
+                dispatch(fetchRequiredDoctorInforFailed())
+            }
+        } catch (e) {
+            dispatch(fetchRequiredDoctorInforFailed())
+            console.log(e)
+        }
+    }
+}
+
+export const fetchRequiredDoctorInforStart = () => ({
+    type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_START
+})
+
+export const fetchRequiredDoctorInforSuccess = (allRequiredData) => ({
+    type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS,
+    allRequiredData: allRequiredData
+})
+
+export const fetchRequiredDoctorInforFailed = () => ({
+    type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_FAILED
 })

@@ -23,10 +23,11 @@ class About extends Component {
                         <iframe width="100%" height="360px"
                             src="https://www.youtube.com/embed/IBTmypxD2mU"
                             title="Michael Wong 光良【 Fairy Tale 童话 Tong Hua 】"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            frameBorder="{0}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen>
                         </iframe>
+
+
                     </div>
                     <div className='content-right'>
                         <p>Trong thời đại công nghệ 4.0, việc sử dụng mạng Internet và các thiết bị kết nối đã trở thành một phần không thể thiếu trong cuộc sống của chúng ta. Tuy nhiên, cùng với sự phát triển của công nghệ, sự nguy hiểm và các mối đe dọa liên quan đến an ninh mạng cũng ngày càng tăng lên.
