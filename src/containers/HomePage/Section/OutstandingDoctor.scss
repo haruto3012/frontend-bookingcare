@@ -1,0 +1,17 @@
+.outstanding-doctor-child {
+    cursor: pointer;
+
+    .address-clinic {
+        color: black;
+    }
+
+    .outstanding-doctor-name {
+        padding: 10px 0;
+
+    }
+
+    &:hover {
+        color: #49bce2
+    }
+
+}

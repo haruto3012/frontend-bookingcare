@@ -59,7 +59,8 @@
     },
     "homepage": {
         "outstanding-doctor": "Last weak's featured doctors",
-        "more-infor": "More information"
+        "more-infor": "More information",
+        "popular-specialty": "Popular Specialties"
     },
     "manage-schedule": {
         "title": "Manage doctor's schedule",
@@ -73,6 +74,29 @@
             "no-schedule": "The doctor does not have an appointment during this time. Please choose another time!",
             "choose": "Choose ",
             "book-free": " and book (Free)"
+        },
+        "extra-infor-doctor": {
+            "text-address": "Clinic's Address",
+            "price": "PRICE: ",
+            "detail": "Show Detail",
+            "hidedetail": "Hide Detail",
+            "price2": "Price",
+            "payment": "The patient can pay the cost in the form of: ",
+            "hideprice": "Hide Detail",
+            "read-more": "Đọc thêm"
+        },
+        "booking-modal": {
+            "title": "BOOKING APPOINTMENT",
+            "price": "Price: ",
+            "fullname": "Full name",
+            "phonenumber": "Phone number",
+            "email": "Email",
+            "address": "Address",
+            "reason": "Reason",
+            "birthday": "Birthday",
+            "gender": "Gender",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
         }
     },
     "admin": {
@@ -87,7 +111,9 @@
             "province": "Province",
             "name-clinic": "Clinic's name",
             "address-clinic": "Clinic's address",
-            "note": "Note"
+            "note": "Note",
+            "specialty": "Specialty",
+            "clinic": "Clinic"
         }
     }
 }

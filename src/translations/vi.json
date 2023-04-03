@@ -59,7 +59,8 @@
     },
     "homepage": {
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
-        "more-infor": "Xem thêm"
+        "more-infor": "Xem thêm",
+        "popular-specialty": "Chuyên khoa phổ biến"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh",
@@ -73,6 +74,29 @@
             "no-schedule": "Bác sĩ không có lịch khám trong thời gian này. Vui lòng chọn thời gian khác!",
             "choose": "Chọn ",
             "book-free": " và đặt (Phí đặt lịch 0đ)"
+        },
+        "extra-infor-doctor": {
+            "text-address": "Địa chỉ khám",
+            "price": "GIÁ KHÁM: ",
+            "detail": " Xem chi tiết",
+            "hidedetail": "Ẩn bớt",
+            "price2": "Giá Khám",
+            "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức: ",
+            "hideprice": "Ẩn bảng giá",
+            "read-more": "Đọc thêm"
+        },
+        "booking-modal": {
+            "title": "ĐẶT LỊCH KHÁM",
+            "price": "Giá khám: ",
+            "fullname": "Họ và tên",
+            "phonenumber": "Số điện thoại",
+            "email": "Email",
+            "address": "Địa chỉ liên hệ",
+            "reason": "Lý do khám",
+            "birthday": "Ngày sinh",
+            "gender": "Giới tính",
+            "confirm": "Xác nhận",
+            "cancel": "Hủy"
         }
     },
     "admin": {
@@ -87,7 +111,9 @@
             "province": "Tỉnh thành",
             "name-clinic": "Tên phòng khám",
             "address-clinic": "Địa chỉ phòng khám",
-            "note": "Ghi chú"
+            "note": "Ghi chú",
+            "specialty": "Chuyên khoa",
+            "clinic": "Phòng khám"
         }
     }
 }

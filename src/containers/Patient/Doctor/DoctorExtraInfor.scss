@@ -25,9 +25,13 @@
 
     .content-down {
         .short-infor {
-            span {
+            .detail {
                 cursor: pointer;
                 color : #45c3d2;
+            }
+
+            .currency {
+                margin: 0 5px;
             }
         }
 
@@ -48,10 +52,10 @@
                 }
             }
 
-            .payment-note1 {}
+            .note {}
         }
 
-        .payment-note2 {
+        .payment {
             border          : 1px solid #ddd;
             padding         : 5px;
             background-color: #eee;

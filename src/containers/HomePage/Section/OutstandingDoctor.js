@@ -5,16 +5,19 @@ import Slider from 'react-slick';
 import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
+import './OutstandingDoctor.scss'
+
 
 class OutstandingDoctor extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            arrDoctors: []
+            arrDoctors: [],
+            arrClinic: []
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.props.loadTopDoctors()
     }
 
@@ -34,9 +37,7 @@ class OutstandingDoctor extends Component {
     }
 
     render() {
-        let arrDoctors = this.state.arrDoctors
-        // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors)
-
+        let { arrDoctors } = this.state
         let { language } = this.props
         return (
             <div className='section-share section-outstanding-doctor'>
@@ -57,18 +58,20 @@ class OutstandingDoctor extends Component {
                                 let nameVi = `${item.positionData.valueVi}. ${item.lastName} ${item.firstName}`
                                 let nameEn = `${item.positionData.valueEn}. ${item.firstName} ${item.lastName}`
                                 return (
-                                    <div className='section-customize' key={index} onClick={() => this.handleViewDetailDoctor(item)}>
+
+                                    <div className='section-customize outstanding-doctor-child' key={index} onClick={() => this.handleViewDetailDoctor(item)}>
                                         <div className='border-customize'>
                                             <div className='outer-bg'>
                                                 <div className='bg-img section-outstanding-doctor'
                                                     style={{ backgroundImage: `url(${imageBase64})` }} />
                                             </div>
                                             <div className='position text-center'>
-                                                <div>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
-                                                <div>Bệnh viện hữu nghị Việt Đức</div>
+                                                <div className='outstanding-doctor-name'>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
+                                                <div className='address-clinic'>{item.address}</div>
                                             </div>
                                         </div>
                                     </div>
+
                                 )
                             })}
 
