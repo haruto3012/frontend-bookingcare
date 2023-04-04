@@ -6,6 +6,8 @@ import { getDetailInforDoctorService } from '../../../services/userService'
 import { LANGUAGES } from '../../../utils';
 import DoctorSchedule from './DoctorSchedule';
 import DoctorExtraInfor from './DoctorExtraInfor';
+import LikeAndShare from '../SocialPlugin/LikeAndShare'
+import Comment from '../SocialPlugin/Comment'
 
 
 class DetailDoctor extends Component {
@@ -47,6 +49,9 @@ class DetailDoctor extends Component {
             nameVi = `${detailDoctor.positionData.valueVi}. ${detailDoctor.lastName} ${detailDoctor.firstName}`;
             nameEn = `${detailDoctor.positionData.valueEn}. ${detailDoctor.firstName} ${detailDoctor.lastName}`;
         }
+
+        let currentURL = process.env.REACT_APP_IS_LOCALHOST === 1 ?
+            "" : window.location.href
         return (
             <>
                 <HeaderHomePage isShowBanner={false} />
@@ -65,6 +70,9 @@ class DetailDoctor extends Component {
                                         {detailDoctor.Markdown.description}
                                     </span>
                                 }
+                                <div className='like-share-plugin'>
+                                    <LikeAndShare dataHref={currentURL} />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,7 +93,7 @@ class DetailDoctor extends Component {
                         }
                     </div>
                     <div className='comment-doctor'>
-
+                        <Comment dataHref={currentURL} width={"100%"} />
                     </div>
                 </div>
             </>

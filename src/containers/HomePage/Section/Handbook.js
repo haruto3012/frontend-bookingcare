@@ -25,39 +25,39 @@ class Handbook extends Component {
                         <Slider {...this.props.settings}>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Cơ xương khớp</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Thần kinh</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Tim mạch</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Tiêu hoá</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Tai mũi họng</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Cột sống</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Y học cổ truyền</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Châm cứu</div>
+                                <div>Cẩm nang 1</div>
                             </div>
                             <div className='section-customize'>
                                 <div className='bg-img section-handbook' ></div>
-                                <div>Sản phụ khoa</div>
+                                <div>Cẩm nang 1</div>
                             </div>
 
 

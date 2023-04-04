@@ -41,7 +41,6 @@ class BookingModal extends Component {
     async componentDidMount() {
         this.props.fetchGender()
 
-
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
@@ -72,6 +71,19 @@ class BookingModal extends Component {
                     addressClinic: res.data.Doctor_Infor.addressClinic
                 })
             }
+        }
+
+        if (this.props.isOpenModal !== prevProps.isOpenModal) {
+            this.setState({
+                fullName: '',
+                phoneNumber: '',
+                email: '',
+                address: '',
+                reason: '',
+                birthday: '',
+                errors: '',
+                selectedGender: '',
+            })
         }
     }
 
@@ -133,7 +145,8 @@ class BookingModal extends Component {
     handleConfirmBooking = async () => {
         let timeString = this.buildTimeBooking(this.props.dataTime)
         let doctorName = this.buildDoctorName(this.props.dataTime)
-        let date = new Date(this.state.birthday).getTime()
+        let birthday = new Date(this.state.birthday).getTime()
+        let date = this.props.dataTime.date
         let isValid = this.checkValidateInput();
         if (isValid) {
             let res = await postPatientBookingAppointment({
@@ -143,6 +156,7 @@ class BookingModal extends Component {
                 address: this.state.address,
                 reason: this.state.reason,
                 date: date,
+                birthday: birthday,
                 selectedGender: this.state.selectedGender.value,
                 doctorId: this.state.doctorId,
                 timeType: this.state.timeType,
@@ -196,6 +210,8 @@ class BookingModal extends Component {
             this.handleConfirmBooking()
         }
     }
+
+
 
     render() {
         let { isOpenModal, closeBookingModal, dataTime, keyDown, language } = this.props
@@ -262,7 +278,7 @@ class BookingModal extends Component {
                                     <DatePicker className='form-control'
                                         onChange={this.handleOnChangeDatePicker}
                                         value={this.state.birthday}
-                                    // minDate={new Date().setHours(0, 0, 0, 0)}
+                                        maxDate={moment().toDate()}
                                     />
                                 </div>
                                 <div className="col-3 py-1 form-group">

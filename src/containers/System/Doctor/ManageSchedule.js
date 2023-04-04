@@ -22,7 +22,7 @@ class ManageSchedule extends Component {
         this.state = {
             listDoctors: [],
             selectedDoctor: {},
-            currentDate: '',
+            currentDate: moment(new Date()).startOf('day').valueOf(),
             rangeTime: ''
         }
     }

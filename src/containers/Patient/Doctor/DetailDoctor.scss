@@ -6,12 +6,13 @@
         padding: 0 180px;
 
         .content-intro-left {
-            width          : 150px;
-            height         : 150px;
-            background     : center center no-repeat;
-            background-size: contain;
-            border-radius  : 50%;
-            margin         : 10px 20px;
+            width              : 150px;
+            height             : 150px;
+            background-position: center;
+            background-repeat  : no-repeat;
+            background-size    : cover;
+            border-radius      : 50%;
+            margin             : 10px 20px;
 
         }
 
@@ -30,6 +31,10 @@
                 padding-top: 7px;
                 font-size  : 13px;
                 color      : #555;
+
+                .like-share-plugin {
+                    margin: 10px 0 20px 0;
+                }
             }
         }
     }
@@ -64,6 +69,6 @@
     }
 
     .comment-doctor {
-        height: 50px;
+        padding: 10px 100px;
     }
 }
