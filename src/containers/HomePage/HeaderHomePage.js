@@ -34,6 +34,24 @@ class HeaderHomePage extends Component {
         }
     }
 
+    handleViewList = (item) => {
+        if (item === 'specialty') {
+            if (this.props.history) {
+                this.props.history.push(`/list-specialty`)
+            }
+        }
+        if (item === 'medical-clinic') {
+            if (this.props.history) {
+                this.props.history.push(`/list-clinic`)
+            }
+        }
+        if (item === 'doctor') {
+            if (this.props.history) {
+                this.props.history.push(`/list-doctor`)
+            }
+        }
+    }
+
 
     render() {
         let language = this.props.language
@@ -47,15 +65,15 @@ class HeaderHomePage extends Component {
                             <img className='header-logo' src={logo} alt='logo' onClick={() => this.returnToHome()} />
                         </div>
                         <div className='center-content'>
-                            <div className='child-content'>
+                            <div className='child-content' onClick={() => this.handleViewList('specialty')} >
                                 <div><b> <FormattedMessage id='home-header.speciality' /></b></div>
                                 <div className='sub-title'><FormattedMessage id='home-header.search-doctor' /></div>
                             </div>
-                            <div className='child-content'>
+                            <div className='child-content' onClick={() => this.handleViewList('medical-clinic')}>
                                 <div><b><FormattedMessage id='home-header.health-facility' /></b></div>
                                 <div className='sub-title'><FormattedMessage id='home-header.select-room' /></div>
                             </div>
-                            <div className='child-content'>
+                            <div className='child-content' onClick={() => this.handleViewList('doctor')}>
                                 <div><b><FormattedMessage id='home-header.doctor' /></b></div>
                                 <div className='sub-title'><FormattedMessage id='home-header.select-doctor' /></div>
                             </div>
@@ -78,44 +96,44 @@ class HeaderHomePage extends Component {
                             <div className='title2'><FormattedMessage id='banner.title2' /></div>
                             <div className='search'>
                                 <i className="fas fa-search"></i>
-                                <input type='text' placeholder='Tìm chuyên khoa khám bệnh' />
+                                <input type='text' placeholder={language === LANGUAGES.VI ? 'Tìm chuyên khoa khám bệnh' : 'Search the medical specialty'} />
                             </div>
                         </div>
                         <div className='content-down'>
                             <div className='options'>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg1})`, backgroundSize: '32px' }} ></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon1' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg2})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon2' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg3})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon3' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg4})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon4' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg5})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon5' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg6})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon6' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg7})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon7' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg8})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon8' /></div>
                                 </a>
-                                <a className='option-child' href='#'>
+                                <a className='option-child' href='#' onClick={() => this.handleViewList('specialty')}>
                                     <div className='icon-child' style={{ backgroundImage: `url(${bg9})`, backgroundSize: '32px' }}></div>
                                     <div className='text-child'><FormattedMessage id='banner.icon9' /></div>
                                 </a>

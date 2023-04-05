@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import { emitter } from '../../utils/emitter';
 import _ from 'lodash'
+import { FormattedMessage } from 'react-intl';
+import { LANGUAGES } from '../../utils';
+
 
 class ModalEditUser extends Component {
 
@@ -25,7 +28,7 @@ class ModalEditUser extends Component {
             this.setState({
                 id: user.id,
                 email: user.email,
-                password: 'harcord',
+                password: 'hashcode',
                 firstName: user.firstName,
                 lastName: user.lastName,
                 address: user.address,
@@ -45,7 +48,7 @@ class ModalEditUser extends Component {
             ...copyState
         });
     }
-
+    //Validate input
     checkValidateInput = () => {
         let isValid = true
         let arrInput = ['email', 'password', 'firstName', 'lastName', 'address'];
@@ -60,6 +63,7 @@ class ModalEditUser extends Component {
         return isValid;
     }
 
+    //Check valid if valid do save
     handleSaveUser = () => {
         let isValid = this.checkValidateInput();
         if (isValid) {
@@ -69,34 +73,36 @@ class ModalEditUser extends Component {
 
 
     render() {
+        let { language } = this.props
+
         return (
             <Modal isOpen={this.props.isOpen}
                 toggle={() => { this.toggle() }}
                 className="modal-user-container"
                 size="lg"
             >
-                <ModalHeader toggle={() => { this.toggle() }}>Edit the user</ModalHeader>
+                <ModalHeader toggle={() => { this.toggle() }}>{language === LANGUAGES.VI ? 'Thay đổi thông tin' : 'Edit the users'}</ModalHeader>
                 <ModalBody>
-                    <div className='modal-user-body'>
-                        <div className='input-container'>
-                            <label>Email</label>
-                            <input type='text' disabled onChange={(event) => this.handleOnChangeInput(event, "email")} value={this.state.email}></input>
+                    <div className='row'>
+                        <div className='col-6 form-group'>
+                            <label><FormattedMessage id='manage-user.email' /></label>
+                            <input className='form-control' type='text' onChange={(event) => this.handleOnChangeInput(event, "email")} value={this.state.email}></input>
                         </div>
-                        <div className='input-container'>
-                            <label>Password</label>
-                            <input type='password' disabled onChange={(event) => this.handleOnChangeInput(event, "password")} value={this.state.password}></input>
+                        <div className='col-6 form-group'>
+                            <label><FormattedMessage id='manage-user.password' /></label>
+                            <input className='form-control' type='password' onChange={(event) => this.handleOnChangeInput(event, "password")} value={this.state.password}></input>
                         </div>
-                        <div className='input-container'>
-                            <label>First Name</label>
-                            <input type='text' onChange={(event) => this.handleOnChangeInput(event, "firstName")} value={this.state.firstName}></input>
+                        <div className='col-6 form-group'>
+                            <label><FormattedMessage id='manage-user.firstname' /></label>
+                            <input className='form-control' type='text' onChange={(event) => this.handleOnChangeInput(event, "firstName")} value={this.state.firstName}></input>
                         </div>
-                        <div className='input-container'>
-                            <label>Last Name</label>
-                            <input type='text' onChange={(event) => this.handleOnChangeInput(event, "lastName")} value={this.state.lastName}></input>
+                        <div className='col-6 form-group'>
+                            <label><FormattedMessage id='manage-user.lastname' /></label>
+                            <input className='form-control' type='text' onChange={(event) => this.handleOnChangeInput(event, "lastName")} value={this.state.lastName}></input>
                         </div>
-                        <div className='input-container max-width-input'>
-                            <label>Address</label>
-                            <input type='text' onChange={(event) => this.handleOnChangeInput(event, "address")} value={this.state.address}></input>
+                        <div className='col-12 form-group'>
+                            <label><FormattedMessage id='manage-user.address' /></label>
+                            <input className='form-control' type='text' onChange={(event) => this.handleOnChangeInput(event, "address")} value={this.state.address}></input>
                         </div>
                     </div>
                 </ModalBody>
@@ -116,6 +122,8 @@ class ModalEditUser extends Component {
 
 const mapStateToProps = state => {
     return {
+        language: state.app.language,
+
     };
 };
 

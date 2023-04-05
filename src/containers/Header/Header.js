@@ -19,7 +19,7 @@ class Header extends Component {
     handleChangeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
     }
-
+    //check the user role to render suitable menu app
     componentDidMount() {
         let { userInfo } = this.props;
         let menu = [];

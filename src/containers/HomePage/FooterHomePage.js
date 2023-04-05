@@ -15,8 +15,8 @@ class FooterHomePage extends Component {
 
         return (
             <div className='home-footer'>
-                <p> &copy; 2023 by Haruto. More information, please visit my youtube channel.
-                    <a target='_blank' href='https://www.youtube.com/watch?v=IBTmypxD2mU'>
+                <p> &copy; 2023 by Haruto. More information, please visit my channel.
+                    <a target='_blank' href='https://github.com/haruto3012'>
                         &#8594; Click here &#8592;
                     </a>
                 </p>

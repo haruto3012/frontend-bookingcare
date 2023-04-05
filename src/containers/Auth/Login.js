@@ -64,7 +64,7 @@ class Login extends Component {
             isShowPassword: !this.state.isShowPassword
         })
     }
-
+    //check key down Enter
     handleKeyDown = (event) => {
         if (event.key === 'Enter' || event.keyCode === 13) {
             this.handleLoginApi()

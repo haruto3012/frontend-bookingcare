@@ -77,8 +77,6 @@ class ProfileDoctor extends Component {
             nameVi = `${dataProfile.positionData.valueVi}. ${dataProfile.lastName} ${dataProfile.firstName}`;
             nameEn = `${dataProfile.positionData.valueEn}. ${dataProfile.firstName} ${dataProfile.lastName}`;
         }
-        console.log('check data profile', dataProfile)
-        console.log('check province')
         return (
             <div className="profile-doctor-container">
                 <div className='intro-doctor'>
@@ -119,7 +117,7 @@ class ProfileDoctor extends Component {
                 </div>
                 {isShowLinkDetail === true &&
                     <div className="view-detail-doctor">
-                        <Link to={`/detail-doctor/${doctorId}`} className='link-to'>Xem thêm</Link>
+                        <Link to={`/detail-doctor/${doctorId}`} className='link-to'>{language === LANGUAGES.VI ? 'Xem thêm' : 'More detail'}</Link>
                     </div>
                 }
                 {isShowPrice === true &&

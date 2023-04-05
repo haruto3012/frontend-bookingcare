@@ -6,6 +6,8 @@ import { getAllUsers, createNewUserService, deleteUserService, editUserService }
 import ModalUser from './ModalUser';
 import { emitter } from '../../utils/emitter';
 import ModalEditUser from './ModalEditUser';
+import { LANGUAGES } from '../../utils';
+import { FormattedMessage } from 'react-intl';
 
 class UserManage extends Component {
 
@@ -22,7 +24,7 @@ class UserManage extends Component {
     async componentDidMount() {
         return this.getAllUserFromReact();
     }
-
+    //get all user when this component did mount
     getAllUserFromReact = async () => {
         let response = await getAllUsers('ALL');
         if (response && response.errCode === 0) {
@@ -49,9 +51,9 @@ class UserManage extends Component {
             isOpenModalEditUser: !this.state.isOpenModalEditUser,
         })
     }
-
+    //create user
     createNewUser = async (data) => {
-
+        //use emitter to fire an event
         try {
             let response = await createNewUserService(data)
             if (response && response.errCode !== 0) {
@@ -68,7 +70,7 @@ class UserManage extends Component {
             console.log(e)
         }
     }
-
+    //delete user
     handleDeleteUser = async (user) => {
         try {
             let res = await deleteUserService(user.id);
@@ -89,7 +91,7 @@ class UserManage extends Component {
             userEdit: user
         })
     }
-
+    //edit user function then pass to props for modalEditUser
     doEditUser = async (user) => {
         try {
             let res = await editUserService(user)
@@ -110,6 +112,7 @@ class UserManage extends Component {
 
     render() {
         let arrUsers = this.state.arrUsers;
+        let { language } = this.props
         return (
 
             <div className="user-container">
@@ -123,11 +126,11 @@ class UserManage extends Component {
                         editUser={this.doEditUser}
                     />
                 }
-                <div className='title text-centre'>Manage users with Haruto</div>
+                <div className='title text-centre'>{language === LANGUAGES.VI ? 'QUẢN LÝ NGƯỜI DÙNG' : 'USER MANAGEMENT'}</div>
                 <div className='mx-1'>
                     <button className='btn btn-primary px-3'
                         onClick={() => this.handleAddNewUser()}>
-                        <i className="fas fa-plus"></i> Add new user</button>
+                        <i className="fas fa-plus"></i>{language === LANGUAGES.VI ? ' Thêm người dùng' : ' Add new user'}</button>
                 </div>
                 <div className='user-table mt-3 mx-1'>
 
@@ -135,11 +138,11 @@ class UserManage extends Component {
                         <tbody>
 
                             <tr>
-                                <th>Email</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Address</th>
-                                <th>Action</th>
+                                <th><FormattedMessage id='manage-user.email' /></th>
+                                <th><FormattedMessage id='manage-user.firstname' /></th>
+                                <th><FormattedMessage id='manage-user.lastname' /></th>
+                                <th><FormattedMessage id='manage-user.address' /></th>
+                                <th><FormattedMessage id='manage-user.action' /></th>
                             </tr>
 
                             {arrUsers && arrUsers.map((item, index) => {
@@ -171,6 +174,8 @@ class UserManage extends Component {
 
 const mapStateToProps = state => {
     return {
+        language: state.app.language,
+
     };
 };
 

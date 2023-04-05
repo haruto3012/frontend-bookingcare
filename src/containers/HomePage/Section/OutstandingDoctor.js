@@ -36,6 +36,12 @@ class OutstandingDoctor extends Component {
         }
     }
 
+    handleViewListDoctor = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-doctor`)
+        }
+    }
+
     render() {
         let { arrDoctors } = this.state
         let { language } = this.props
@@ -44,7 +50,7 @@ class OutstandingDoctor extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'><FormattedMessage id='homepage.outstanding-doctor' /></span>
-                        <button className='btn-section'><FormattedMessage id='homepage.more-infor' /></button>
+                        <button className='btn-section' onClick={() => this.handleViewListDoctor()}><FormattedMessage id='homepage.more-infor' /></button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings}>

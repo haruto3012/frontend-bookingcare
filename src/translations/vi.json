@@ -56,12 +56,14 @@
         "role": "Vai trò",
         "image": "Ảnh đại diện",
         "save": "Lưu",
-        "edit": "Lưu thay đổi"
+        "edit": "Lưu thay đổi",
+        "action": "Thao tác"
     },
     "homepage": {
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
         "more-infor": "Xem thêm",
-        "popular-specialty": "Chuyên khoa phổ biến"
+        "popular-specialty": "Chuyên khoa phổ biến",
+        "outstanding-medical": "Cơ sở y tế nổi bật"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh",

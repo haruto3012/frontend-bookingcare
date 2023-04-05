@@ -56,12 +56,14 @@
         "role": "Role",
         "image": "Avatar",
         "save": "Save",
-        "edit": "Save changes"
+        "edit": "Save changes",
+        "action": "Action"
     },
     "homepage": {
         "outstanding-doctor": "Last weak's featured doctors",
         "more-infor": "More information",
-        "popular-specialty": "Popular Specialties"
+        "popular-specialty": "Popular Specialties",
+        "outstanding-medical": "Outstanding medical facilities"
     },
     "manage-schedule": {
         "title": "Manage doctor's schedule",
